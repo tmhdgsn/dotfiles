@@ -1,0 +1,13 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	pl = pull
+	ps = push
+	a  = add
+[user]
+	email = hdgsnt@gmail.com
+	name = Tom Hodgson
+[credential]
+	helper = store --file ~/.my-credentials

@@ -1,0 +1,37 @@
+-- vim: ft=haskell
+Config { font = "xft:Bitstream Vera Sans Mono:size=11:antialias=true"
+       , bgColor = "black" 
+       , fgColor = "#FFF9DC"
+       , position = Top
+       , lowerOnStart = False
+       , allDesktops = True
+       , overrideRedirect = False
+       , border = BottomBM 0
+       , borderColor = "black"
+       , commands = [ Run Cpu
+                          ["-L","3","-H","50","--normal","green","--high","red"] 10 
+                             
+                    , Run Date "%a %m/%d %H:%M" "date" 10
+                    , Run StdinReader
+		    , Run Battery [
+			"-t", "<acstatus>: <left>% - <timeleft>",
+			"--",
+			"-O", "AC",
+			"-o", "Bat",
+			"-h", "green",
+			"-l", "red"
+		     ] 10
+		    , Run Com "/home/t/.scripts/vpn_status.sh" [] "vpn" 25
+			, Run Com "/home/t/.scripts/get-volume.sh" [] "myvolume" 1
+		    , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+                             , "--Low"      , "20"        -- units: %
+                             , "--High"     , "90"        -- units: %
+                             , "--low"      , "darkgreen"
+                             , "--normal"   , "darkorange"
+                             , "--high"     , "darkred"
+                             ] 10 
+                ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader% }{ VPN: %vpn% | Vol: %myvolume% | %cpu% | %memory% | %battery% || <fc=#b19cd9>%date%</fc> "
+       }
