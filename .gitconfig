@@ -6,6 +6,8 @@
 	pl = pull
 	ps = push
 	a  = add
+	cl = clone
+	d = diff
 [user]
 	email = hdgsnt@gmail.com
 	name = Tom Hodgson
