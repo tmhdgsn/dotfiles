@@ -92,6 +92,10 @@ b() {
 	esac
 }
 
+external() {
+	echo $(bazel info output_base)/external
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # Virtualenvwrapper things

@@ -30,6 +30,9 @@ au BufReadPost *
 \ endif
 
 
+" inherit env from .zshenv (eg for b b :foo)
+set shell=zsh
+
 " toggle paste
 set pastetoggle=<F7>
 augroup paste
@@ -122,7 +125,6 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 set autochdir
 
-let g:go_template_file = "new.go"
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark="hard"
@@ -139,7 +141,7 @@ augroup END
 
 
 let g:completor_python_binary = '/usr/bin/python'
-let g:completor_gocode_binary = '/home/t/go/bin/gocode'
+let g:completor_gocode_binary = '/home/t/g/bin/gocode'
 let g:completor_node_binary = '/home/t/.nvm/versions/node/v8.11.3/bin/node'
 let g:completor_clang_binary = '/usr/bin/clang'
 let g:completor_racer_binary = '/home/t/.cargo/bin/racer'
