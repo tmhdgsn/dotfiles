@@ -49,6 +49,8 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 export PHONE_HOME=/data/data/com.termux/files/home
 export PATH=$PATH:$HOME/bazel-go/bin/
 
+export MOZ_ENABLE_WAYLAND=1
+
 # better searching in cmd mode
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-forward
